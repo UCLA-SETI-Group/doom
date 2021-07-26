@@ -30,7 +30,7 @@ def show_batch(batch, plot_shape, snr_thresh=None):
     shifts = batch['SHIFT'].numpy()
     p_rows, p_cols = plot_shape
     
-    plt.figure(figsize=(20, 20))
+    plt.figure(figsize=(12, 12))
     for n in range(0, p_rows*p_cols//2):
         ax = plt.subplot(p_rows, p_cols, n+1+np.floor(n/p_cols)* 4)
         
@@ -44,8 +44,9 @@ def show_batch(batch, plot_shape, snr_thresh=None):
         
         plt.imshow(
             np.minimum(image_batch[n, :, :, 0], snr_thresh), 
-            aspect='auto'
+            aspect='auto', cmap='gray'
         )
+        plt.axis('off')
         
         plt.title(f"LABEL: {labels[n]}")
         
@@ -61,8 +62,9 @@ def show_batch(batch, plot_shape, snr_thresh=None):
         
         plt.imshow(
             np.minimum(image_batch[n, :, :, 1], snr_thresh), 
-            aspect='auto'
+            aspect='auto', cmap='gray'
         )
+        plt.axis('off')
 
 
 def _shift_and_calc_scores(vdata, shift, model):
