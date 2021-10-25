@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/386547850.svg)](https://zenodo.org/badge/latestdoi/386547850)
 # doom
 A Machine-Learning-Based Direction-of-Origin Filter for the Identification of Radio Frequency Interference in the Search for Technosignatures
 
